@@ -13,6 +13,13 @@ Page({
         num: 0,
         object: {
             text: 'init data'
+        },
+        id: 0,
+        zero: 0,
+        item: {
+            index: 0,
+            msg: 'this is a template',
+            time: '2018-09'
         }
     },
     onLoad: function(query) { // 调用一次
@@ -20,7 +27,7 @@ Page({
     },
     onShow: function() { // 显示/切入前台时触发
         console.log(this.route);
-        common.syaHello('niu');
+        common.sayHello('niu');
     },
     onReady: function() { // 初次渲染完成时触发，调用一次
         this.mapCtx = wx.createMapContext('myMap');

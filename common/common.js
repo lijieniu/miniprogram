@@ -6,5 +6,5 @@ function sayGoodBye(name) {
     console.log(`Goodbye ${name} !`);
 }
 
-module.exports.syaHello = sayHello;
+module.exports.sayHello = sayHello;
 exports.sayGoodBye = sayGoodBye;
