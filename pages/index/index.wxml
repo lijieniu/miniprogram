@@ -1,0 +1,8 @@
+<view>{{text}}</view>
+<view>{{array[0].msg}}</view>
+<button bindtap="viewTap">click me</button>
+<view>{{num}}</view>
+<button bindtap="changeNum">change normal num</button>
+<view>{{array[0].msg}}</view>
+<button bindtap="changeItemInArray">change array data</button>
+<map id="myMap" show-location/>
