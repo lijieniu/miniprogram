@@ -1,0 +1,34 @@
+<view class="nav-bar">
+    <view class="nav-item {{currIndex == 0 ? 'active' : ''}}" bindtap="changeNav" data-current-index='0'>
+        <text class="nav-name">Item1</text>
+    </view>
+    <view class="nav-item {{currIndex == 1 ? 'active' : ''}}" bindtap="changeNav" data-current-index='1'>
+        <text class="nav-name">Item2</text>
+    </view>
+    <view class="scroll-underline" style="transform: translateX({{tX}}); width: {{scrollItemWidth}}">
+    </view>
+</view>
+<view class="goods-list">
+    <view class="goods-item">
+        <text class="goods-name">商品1</text>
+        <button class="addcart-btn" bindtap="addToCart">+</button>
+    </view>
+    <view class="goods-item">
+        <text class="goods-name">商品2</text>
+        <button class="addcart-btn" bindtap="addToCart">+</button>
+    </view>
+    <view class="goods-item">
+        <text class="goods-name">商品3</text>
+        <button class="addcart-btn" bindtap="addToCart">+</button>
+    </view>
+    <view class="goods-item">
+        <text class="goods-name">商品4</text>
+        <button class="addcart-btn" bindtap="addToCart">+</button>
+    </view>
+</view>
+<view hidden="{{false}}" style="left: {{bus_x}}px; top: {{bus_y}}px; position: fixed;transition: {{boxFly.transition}};transform: {{boxFly.transform}}">
+    <view style="width: 80rpx;height: 80rpx;border-radius:50%;transform: {{innerFly.transform}};transition:1s transform cubic-bezier(0,-0.5,1,0.18);opacity: {{opacity}};background-color: red;"></view>
+</view>
+<view class="cart">
+    <text>我是简易购物车</text>
+</view>

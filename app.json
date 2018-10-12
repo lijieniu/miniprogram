@@ -2,7 +2,8 @@
     "pages": [
         "pages/index/index",
         "pages/logs/logs",
-        "pages/address/index"
+        "pages/address/index",
+        "pages/navbar/index"
     ],
     "window": {
         "navigationBarTitleText": "Demo"
