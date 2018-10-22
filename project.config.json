@@ -12,8 +12,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.3.0",
-	"appid": "wx45eaf2015e1d314c",
-	"projectname": "miniprogramdemo",
+	"appid": "",
+	"projectname": "test",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
