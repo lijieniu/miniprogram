@@ -1,0 +1,46 @@
+<navigator url="/pages/navbar/index">
+    <button>navbar page</button>
+</navigator>
+<navigator url="/pages/navbar/index">
+    <button>加购动效</button>
+</navigator>
+<view>{{text}}</view>
+<view>{{array[0].msg}}</view>
+<button bindtap="viewTap">click me</button>
+<view>{{num}}</view>
+<button bindtap="changeNum">change normal num</button>
+<view>{{array[0].msg}}</view>
+<button bindtap="changeItemInArray">change array data</button>
+<map id="myMap" show-location/>
+<view id="item-{{id}}">动态id</view>
+<navigator url="/pages/address/index" hover-class="className">
+    <view>to address</view>
+</navigator>
+<template name="msgItem">
+    <view>
+        <text>{{index}} : {{msg}}</text>
+        <text>Time: {{time}}</text>
+    </view>
+</template>
+<template is="msgItem" data="{{...item}}"/>
+<template name="odd">
+    <view>odd</view>
+</template>
+<template name="even">
+    <view>even</view>
+</template>
+<block wx:for="{{[1, 2, 3, 4, 5]}}">
+    <template is="{{item % 2 == 0 ? 'even' : 'odd'}}"/>
+</block>
+<!-- 不要直接写checked='true' -->
+<checkbox checked="{{true}}"></checkbox>
+<!-- 可以在{{}}中直接进行组合，构成新的对象或者数组 -->
+<view wx:for="{{[zero, 1, 2, 3]}}">{{item}}</view> 
+<view wx:for="{{array}}" wx:for-item="msgItem" wx:for-index="msgIndex">{{msgIndex}} : {{msgItem.msg}}</view>
+<view wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9]}}" wx:for-item="i" wx:key="{{index}}">
+    <view wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9]}}" wx:for-item="j">
+        <view wx:if="{{i <= j}}">
+            {{i}} * {{j}} = {{i * j}}
+        </view>
+    </view>
+</view>
