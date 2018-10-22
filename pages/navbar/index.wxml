@@ -26,8 +26,8 @@
         <button class="addcart-btn" bindtap="addToCart">+</button>
     </view>
 </view>
-<view hidden="{{false}}" style="left: {{bus_x}}px; top: {{bus_y}}px; position: fixed;transition: {{boxFly.transition}};transform: {{boxFly.transform}}">
-    <view style="width: 80rpx;height: 80rpx;border-radius:50%;transform: {{innerFly.transform}};transition:1s transform cubic-bezier(0,-0.5,1,0.18);opacity: {{opacity}};background-color: red;"></view>
+<view hidden="{{false}}" style="left: {{bus_x}}px; top: {{bus_y}}px; position: fixed;transition: {{boxFly.transition?boxFly.transition:'none'}};transform:{{boxFly.transform?boxFly.transform : 'none'}};">
+    <view style="width: 80rpx;height: 80rpx;border-radius:50%;transform:{{innerFly.transform?innerFly.transform:'none'}};transition:{{innerFly.transform?'1s transform cubic-bezier(0,-0.5,1,0.18)':'none'}};opacity: {{opacity}};background-color: red;"></view>
 </view>
 <view class="cart">
     <text>我是简易购物车</text>

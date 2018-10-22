@@ -26,49 +26,38 @@ Page({
     },
     addToCart(evt) {
         // 加购动效start
-        let _this = this;
-        setTimeout(function() {
-            _this.setData({
-                bus_x: evt.touches["0"].clientX - 20,
-                bus_y: evt.touches["0"].clientY,
-                opacity: 0,
-                boxFly: {
-                    transition: 'transform 1s cubic-bezier(0,0,0,0)',
-                    transform: ''
-                },
-                innerFly: {
-                    transform: ``
-                }
-            });
-        }, 400);
+      let _this = this;
+      let info = wx.getSystemInfoSync();
+      let w = info.windowWidth;
+      let h = info.windowHeight;
 
-        setTimeout(function() {
-            _this.setData({
-                bus_x: evt.touches["0"].clientX - 20,
-                bus_y: evt.touches["0"].clientY,
-                opacity: 1,
-                boxFly: {
-                    transition: 'transform 1s cubic-bezier(0,0,0,0)',
-                    transform: 'translateX(-' + wx.getSystemInfoSync().windowWidth + 'rpx)'
-                },
-                innerFly: {
-                    transform: `translateY(${(wx.getSystemInfoSync().windowHeight - evt.touches["0"].clientY) * 2}rpx)`
-                }
-            });
-        }, 1000);
-        
-        setTimeout(function() {
-            _this.setData({
-                opacity: 0,
-                boxFly: {
-                    transition: 'transform 1s cubic-bezier(0,0,0,0)',
-                    transform: ''
-                },
-                innerFly: {
-                    transform: ``
-                }
-            });
-        }, 2000);
+      _this.setData({
+        bus_x: evt.touches["0"].clientX - 20,
+        bus_y: evt.touches["0"].clientY,
+        opacity: 0,
+        boxFly: {
+          transition: '',
+          transform: ''
+        },
+        innerFly: {
+          transform: ``
+        }
+      }, () => {
+        setTimeout(() => {
+          _this.setData({
+            bus_x: evt.touches["0"].clientX - 20,
+            bus_y: evt.touches["0"].clientY,
+            opacity: 1,
+            boxFly: {
+              transition: 'transform 1s cubic-bezier(0,0,0,0)',
+              transform: 'translateX(-' + w + 'rpx)'
+            },
+            innerFly: {
+              transform: `translateY(${(h - evt.touches["0"].clientY) * 2}rpx)`
+            }
+          });
+        }, 300);
+      });
 
         // 加购动效end
     }
