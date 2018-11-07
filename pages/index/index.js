@@ -44,6 +44,15 @@ Page({
     onPageScroll: function(options) {
 
     },
+    handleTap1: function() {
+        console.log('handleTap1');
+    },
+    handleTap2: function() {
+        console.log('handleTap2');
+    },
+    handleTap3: function() {
+        console.log('handleTap3');
+    },
     onTabItemTap: function(item) {
         console.log(item.index + 'aaa');
     },

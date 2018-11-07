@@ -1,9 +1,22 @@
+<import src="../tpls/item.wxml" />
 <navigator url="/pages/navbar/index">
     <button>navbar page</button>
 </navigator>
 <navigator url="/pages/navbar/index">
     <button>加购动效</button>
 </navigator>
+<template is="item" data="{{templateText: 'templateText'}}"/>
+<!-- 事件:catch适用于子元素和父元素都有事件要执行 -->
+<view id="outer" bindtap="handleTap1">
+    outer view
+    <view id="middle" catchtap="handleTap2">
+        middle view
+        <view id="inner" bindtap="handleTap3">
+            inner view
+        </view>
+    </view>
+</view>
+<!-- 事件捕获: (capture) capture-bind或者capture-catch,使用capture-catch将中断捕获阶段和取消冒泡 -->
 <view>{{text}}</view>
 <view>{{array[0].msg}}</view>
 <button bindtap="viewTap">click me</button>
