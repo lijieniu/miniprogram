@@ -1,4 +1,33 @@
+<!-- import不会引入目标文件import进去的template -->
 <import src="../tpls/item.wxml" />
+<!-- include引入目标文件除了template\wxs外的所有内容，相当于拷贝 -->
+<include src="../tpls/header.wxml"/>
+<!-- wxs 
+    1. wxs不依赖运行时的基础库版本，可以在所有版本的小程序中运行；
+    2. wxs与js是不同的语言
+    3. wxs的运行环境和js代码是隔离的，wxs不能调用其他的js定义的函数（可以使用定义的变量），也不能调用小程序提供的api；
+    4. wxs函数不能作为函数的事件回调；
+-->
+<wxs module="m1">
+    var msg = 'hello wxs!';
+    module.exports.message = msg;
+
+    var getMax = function(array) {
+        var max;
+        for(var i = 0; i < array.length; i++) {
+            max = max === undefined ? array[i] : (max >= array[i] ? max : array[i]);
+        }
+        return max;
+    }
+    module.exports.getMax = getMax;
+</wxs>
+<view>{{m1.message}}</view>
+<view>{{m1.getMax(numArray)}}</view>
+<wxs src="../wxs/tools.wxs" module="tools" />
+<view>{{tools.msg}}</view>
+<view>{{tools.bar(tools.FOO)}}</view>
+<!-- 获取wxml节点信息-->
+<view id="queryId">获取节点信息</view>
 <navigator url="/pages/navbar/index">
     <button>navbar page</button>
 </navigator>

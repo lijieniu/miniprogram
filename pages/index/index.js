@@ -10,6 +10,7 @@ Page({
                 msg: '2'
             }
         ],
+        numArray: [1, 3, 2, 4],
         num: 0,
         object: {
             text: 'init data'
@@ -28,6 +29,12 @@ Page({
     onShow: function() { // 显示/切入前台时触发
         console.log(this.route);
         common.sayHello('niu');
+        // 在自定义组件中使用this.createSelectorQuery代替wx.createSelectorQuery,这样会将选择器的选取范围定在这个自定义组建内
+        const query = wx.createSelectorQuery();
+        query.select('#queryId').boundingClientRect(function(res) {
+            console.log(res);
+        });
+        query.exec();
     },
     onReady: function() { // 初次渲染完成时触发，调用一次
         this.mapCtx = wx.createMapContext('myMap');

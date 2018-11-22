@@ -1,0 +1,10 @@
+// wxs文件中可以通过require应用其他的wxs文件
+var foo = "'hello world' from tools.wxs";
+var bar = function(b) {
+    return b;
+}
+module.exports = {
+    FOO: foo,
+    bar: bar
+};
+module.exports.msg = 'some msg';
