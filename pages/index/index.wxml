@@ -28,6 +28,7 @@
 <view>{{tools.bar(tools.FOO)}}</view>
 <!-- 获取wxml节点信息-->
 <view id="queryId">获取节点信息</view>
+<first-component inner-text="这是一个自定义组件"></first-component>
 <navigator url="/pages/navbar/index">
     <button>navbar page</button>
 </navigator>
