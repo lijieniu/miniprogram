@@ -1,4 +1,7 @@
-<view class="inner">
+<view class="my-class">
     {{innerText}}
+    {{myBehaviorData.text}}
+    <button bindtap="onTap">我是组件内的按钮</button>
 </view>
 <slot></slot>
+<slot name="slotA"></slot>

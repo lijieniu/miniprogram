@@ -21,6 +21,9 @@ Page({
             index: 0,
             msg: 'this is a template',
             time: '2018-09'
+        },
+        propData: {
+            propA: '通过prop传入组件'
         }
     },
     onLoad: function(query) { // 调用一次
@@ -76,5 +79,8 @@ Page({
         this.setData({
             'array[0].msg': 'changed data'
         });
+    },
+    onMyEvent: function() {
+        console.log('myevent');
     }
 });

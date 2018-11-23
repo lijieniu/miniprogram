@@ -28,7 +28,10 @@
 <view>{{tools.bar(tools.FOO)}}</view>
 <!-- 获取wxml节点信息-->
 <view id="queryId">获取节点信息</view>
-<first-component inner-text="这是一个自定义组件"></first-component>
+<first-component my-class="red-text" inner-text="{{propData.propA}}" bindmyevent="onMyEvent">
+    <view>传入slot中的内容</view>
+    <view slot="slotA">这里是一个具名slot</view>
+</first-component>
 <navigator url="/pages/navbar/index">
     <button>navbar page</button>
 </navigator>
